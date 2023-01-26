@@ -37,12 +37,11 @@ const authMethods = {
         serviceAccountTokenPath = defaults.getAuthServiceAccountPath(),
         role = defaults.getAuthRole()
     } = {}) {
+        let response;
 
         if (!existsSync(serviceAccountTokenPath)) {
             throw new Error(`serviceAccountTokenPath: file not found ${ serviceAccountTokenPath }`);
         }
-
-        let response;
 
         try {
 
@@ -134,7 +133,6 @@ export default class ManageTeamVault {
      * @returns {*} - Returned data.
      */
     async request (params) {
-
         params = Object.assign({
             baseURL: this.baseUrl,
             method: "post",

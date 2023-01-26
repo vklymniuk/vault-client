@@ -5,15 +5,15 @@ image:
 include: 'http://gitlab-service.mt.ec2-internal/public-group/gitlab-shared-pipelines/raw/master/gitlab-npm-publish-job.yml'
 
 stages:
-- install
-- publish
+  - install
+  - publish
 
 install:
   stage: install
   script:
-  - npm install
+      - npm install
   cache:
     paths:
-    - node_modules/
+        - node_modules/
   only:
-  - master
+      - master
